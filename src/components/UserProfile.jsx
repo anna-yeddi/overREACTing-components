@@ -1,19 +1,9 @@
 import React from 'react'
-import logo from '../logo.svg'
-import './user-profile.css'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import User from '../models/User'
+import './user-profile.css'
 
-export default function UserProfile(props) {
-  const { user } = props
-  // const user = {
-  //   name: 'Jane Doe',
-  //   status: 'Developer',
-  //   online: true,
-  //   avatar: logo,
-  //   hobbies: ['JS', 'Frontend', 'React'],
-  // }
-
+export default function UserProfile({ user }) {
   return (
     <>
       <h1>{`You're signed in as ${user.name}`}</h1>
@@ -31,11 +21,11 @@ export default function UserProfile(props) {
   )
 }
 
-UserProfile.PropTypes = {
-  user: PropTypes.instanceOf(User),
+UserProfile.propTypes = {
+  user: propTypes.instanceOf(User),
 }
 
-// UserProfile.PropTypes = {
+// UserProfile.propTypes = {
 //   user: PropTypes.shape({
 //     name: PropTypes.string.isRequired,
 //     status: PropTypes.string,
