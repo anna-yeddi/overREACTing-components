@@ -4,9 +4,17 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
+  const user = {
+    name: 'Jane Doe',
+    status: 'Developer',
+    online: true,
+    avatar: logo,
+    hobbies: ['JS', 'Frontend', 'React'],
+  }
+
   return (
     <div className="App">
-      <UserProfile></UserProfile>
+      <UserProfile user={user}></UserProfile>
     </div>
   )
 }

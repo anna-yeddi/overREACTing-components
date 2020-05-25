@@ -1,25 +1,16 @@
 import React from 'react'
 import logo from '../logo.svg'
 import './user-profile.css'
+import PropTypes from 'prop-types'
 
-export default function UserProfile() {
-  const user = {
-    name: 'Jane Doe',
-    status: 'Developer',
-    online: true,
-    avatar: logo,
-    hobbies: ['JS', 'Frontend', 'React'],
-  }
-
-  // const hobbyStyles = {
-  //   display: 'inline',
-  //   marginRight: 15,
-  //   borderRadius: 5,
-  //   backgroundColor: 'teal',
-  //   color: 'white',
-  //   padding: 5,
-  //   listStyleType: 'arabic-indic',
-  //   textAlign: 'left',
+export default function UserProfile(props) {
+  const { user } = props
+  // const user = {
+  //   name: 'Jane Doe',
+  //   status: 'Developer',
+  //   online: true,
+  //   avatar: logo,
+  //   hobbies: ['JS', 'Frontend', 'React'],
   // }
 
   return (
@@ -35,4 +26,14 @@ export default function UserProfile() {
       </ul>
     </>
   )
+}
+
+UserProfile.PropTypes = {
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    status: PropTypes.string,
+    online: PropTypes.bool,
+    avatar: PropTypes.string,
+    hobbies: PropTypes.arrayOf(PropTypes.string),
+  }),
 }
