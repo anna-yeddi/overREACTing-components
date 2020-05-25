@@ -1,0 +1,10 @@
+.user-profile__hobby {
+  display: inline;
+  margin-right: 15px;
+  border-radius: 5px;
+  background-color: teal;
+  color: white;
+  padding: 5px;
+  list-style-type: arabic-indic;
+  text-align: left;
+}
