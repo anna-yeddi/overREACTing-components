@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../logo.svg'
 import './user-profile.css'
 import PropTypes from 'prop-types'
+import User from '../models/User'
 
 export default function UserProfile(props) {
   const { user } = props
@@ -21,7 +22,9 @@ export default function UserProfile(props) {
       <img src={user.avatar} alt="User logo" width={50} height="50" />
       <ul>
         {user.hobbies.map((hobby) => (
-          <li className="user-profile__hobby">{hobby}</li>
+          <li key={hobby} className="user-profile__hobby">
+            {hobby}
+          </li>
         ))}
       </ul>
     </>
@@ -29,11 +32,15 @@ export default function UserProfile(props) {
 }
 
 UserProfile.PropTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    status: PropTypes.string,
-    online: PropTypes.bool,
-    avatar: PropTypes.string,
-    hobbies: PropTypes.arrayOf(PropTypes.string),
-  }),
+  user: PropTypes.instanceOf(User),
 }
+
+// UserProfile.PropTypes = {
+//   user: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     status: PropTypes.string,
+//     online: PropTypes.bool,
+//     avatar: PropTypes.string,
+//     hobbies: PropTypes.arrayOf(PropTypes.string),
+//   }),
+// }
