@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Components
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) in May 2020.
 
 ## Available Scripts
 
