@@ -6,6 +6,7 @@ import logo from './logo.svg'
 import './App.css'
 import LikeBtn from './components/LikeBtn'
 import LikeBtnClassBased from './components/LikeBtnClassBased'
+import PurchaseList from './components/PurchaseList'
 
 function App() {
   const user = new User({
@@ -23,6 +24,11 @@ function App() {
       <hr />
       <UserProfileClassBased user={user} />
       <LikeBtnClassBased />
+      <hr />
+      <section>
+        <h2>Purchase List</h2>
+        <PurchaseList />
+      </section>
     </div>
   )
 }
